@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		{% load static %}
+		<link rel = "stylesheet" href = "{% static 'styles.css' %}">
+		<title>Signup</title>
+	</head>
+	<body>
+		<div class="centered-form-container">
+		<form action = "/signup_submit/" method = "POST">
+		<h1>Signup</h1>
+			{% csrf_token %}
+			<input type = "email" name = "email" placeholder = "Enter email id" required>
+			<input type = "password" name = "pswd1" placeholder = "Enter password" required>
+			<input type = "password" name = "pswd2" placeholder = "Confirm password" required>
+			<button type = "submit">Submit</button>
+		</form>
+		</div>
+	</body>
+</html>

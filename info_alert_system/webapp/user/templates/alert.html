@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		{% load static %}
+		<link rel = "stylesheet" href = "{% static 'styles.css' %}">
+		<title>Alert</title>
+	</head>
+	<body>
+		<div class="centered-form-container">
+			<form action = "/alert_create/" method = "POST">
+				<h1>Alert</h1>
+				{% csrf_token %}
+				Select topic: 
+				<select name = "topic" required>
+					<option value = "jobs" {{ o1 }}>Jobs</option>
+					<option value = "sports" {{ o2 }}>Sports</option>
+					<option value = "sctech" {{ o3 }}>Science and Technology</option>
+					<option value = "events" {{ o4 }}>Events</option>
+				</select><br><br>
+				Enter search phrase: <textarea name = "search_phrase" placeholder = "Describe what you are looking for" required>{{ sp }}</textarea><br><br>
+				Enter frequency: <input type = "number" name = "freq" placeholder = "Enter frequency" value = "{{ f }}"> days<br><br>
+				<button type = "submit">Save</button>
+				<a href = '/alert_delete/'>Delete</a>
+			</form>
+		</div>
+	</body>
+</html>
