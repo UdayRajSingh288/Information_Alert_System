@@ -90,7 +90,7 @@ DATABASES = {
         'ENGINE': 'django.db.backends.mysql',
         'NAME': 'info_alert_system',
 	'USER': 'root',
-	'PASSWORD': 'virat',
+	'PASSWORD': '1234567890',
     }
 }
 
